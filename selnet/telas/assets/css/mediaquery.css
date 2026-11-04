@@ -1,0 +1,81 @@
+@media (max-width: 900px) {
+    #grade-planos, .container-dif {
+        grid-template-columns: 1fr;
+    }
+
+    #btn-whats{
+       border-radius: 50%;
+       padding: 11.2px;
+    }
+
+    #nmr{
+        display: none;
+    }
+
+    .banner-fundo{
+        max-height: 500px;
+    }
+
+    #banner-zao{
+        max-height: 500px;
+        background-color: rgb(0, 0, 0);
+        min-height: auto;
+    }
+
+    .conteudo-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    #hamburguer {
+        display: flex;
+    }
+
+    .menu {
+        display: none; 
+        position: absolute;
+        top: 68px; /* Altura do seu header */
+        left: 0;
+        width: 100%;
+        background: var(--laranja); /* Ou a cor do seu header */
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    /* Quando o menu tiver a classe 'ativo', ele aparece */
+    .menu.ativo {
+        display: block;
+    }
+
+    .menu > ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .submenu {
+        position: static; /* No celular, ele empurra o conteúdo para baixo */
+        display: none;
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: none;
+        margin-top: 10px;
+    }
+
+    /* No celular, o submenu aparece quando clicamos ou se você preferir manter aberto */
+    .tem-submenu.aberto .submenu {
+        display: block;
+    }
+
+    #hamburguer {
+        display: flex;
+    }
+
+    #card-destaque{
+        display: none;
+    }
+
+  .tag-topo{
+    display: none;
+  }
+
+}

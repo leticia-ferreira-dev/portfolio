@@ -1,0 +1,50 @@
+/* === Tablet (769px - 1024px) === */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    #login {
+        max-width: 700px;
+        min-height: 380px;
+    }
+    #imagem {
+        width: 40%;
+    }
+    #form {
+        padding: 2rem 1.75rem;
+    }
+}
+
+/* === Mobile (até 768px) === */
+@media screen and (max-width: 768px) {
+    #login {
+        flex-direction: column;
+        min-height: unset;
+        border-radius: 12px;
+    }
+    #imagem {
+        width: 100%;
+        min-height: 140px;
+        padding: 1.5rem;
+        justify-content: flex-end;
+    }
+    .marca-nome {
+        font-size: 1.125rem;
+    }
+    .marca-slogan {
+        display: none;
+    }
+    #form {
+        padding: 2rem 1.5rem;
+    }
+    #form h1 {
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    #btn-home span {
+        display: none;
+    }
+
+    #btn-home {
+        padding: 6px 8px;
+    }
+
+}

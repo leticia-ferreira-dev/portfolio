@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SelNet - Planos Móveis</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/mediaquery.css">
+    
+    <!-- Fontes e Ícones -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/20d3823a9d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header>
+        <div id="topo-container">
+
+          <button id="hamburguer">
+                <span></span><span></span><span></span>
+          </button>
+            
+                <a href="index.html"><img src="assets/imagens/SelNet.png" alt="logo selnet" class="logo"></a>
+            
+
+          <nav class="menu">
+
+              <ul>
+                  <li class="tem-submenu">
+
+                      <a href="#">Móvel ▾</a>
+                      <ul class="submenu">
+                          <li><a href="planos_movel.html">Planos</a></li>
+                          <li><a href="#recarga">Recarga</a></li>
+                      </ul>
+                 </li>
+
+                  <li><a href="index.html">Internet</a></li>
+
+                  <li class="tem-submenu">
+                      <a href="#streaming">TV & Streaming ▾</a>
+                      <ul class="submenu">
+                          <li><a href="#tv">TV</a></li>
+                          <li><a href="#streaming-apps">Streaming</a></li>
+                      </ul>
+                  </li>
+
+                  <li><a href="https://wa.me/5521995648559" target="_blank">Atendimento</a></li>
+
+                  <li><a href="../login_cadastro/login/login.html">Financeiro</a></li>
+              </ul>
+          </nav>
+
+
+            <div id="acoes-topo">
+
+                <a href="https://wa.me/5521995648559" id="btn-whats" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span id="nmr">(21) 99564-8559</span>
+                </a>
+
+                <a href="../login_cadastro/login/login.html" id="alogin">
+                    <i class="fa-solid fa-user" id="login"></i>
+                </a>
+
+            </div>
+        </div>
+    </header>
+
+
+    <main id="principal">
+        
+        <!-- Seção Hero / Banner -->
+        <section id="banner-zao">
+            <div class="banner-fundo">
+                <img src="assets/imagens/smartphone_laranja_sem_texto.png" alt="SelNet Móvel" class="img-fundo">
+                <div class="camada-escura"></div>
+            </div>
+            
+            <div class="conteudo-banner">
+                <div class="texto-banner">
+                    <span class="tag-topo">Conectividade em qualquer lugar</span>
+                    <h1 class="titulo-grande">
+                        Planos Móveis com<br>
+                        <span class="destaque-laranja">4G/5G</span><br>
+                        de alta performance.
+                    </h1>
+                    <p class="sub-titulo">Apps Ilimitados · Roaming Nacional · Portabilidade · Sem Fidelidade</p>
+                    <a href="#planos" class="btn-ver-planos">Ver planos</a>
+                </div>
+
+                <div id="card-destaque">
+                    <div class="selo-card">SelNet móvel</div>
+                    <div class="info-plano">
+                        <div class="velocidade">
+                            <span class="num-mega">20</span>
+                            <span class="unidade">GIGA</span>
+                        </div>
+                        <div class="divisor-v"></div>
+                        <div class="preco-card">
+                            <small>Por apenas</small>
+                            <div class="valor-zao">
+                                <span class="cifrao">R$</span>
+                                <span class="reais">39</span>
+                                <span class="centavos">,90</span>
+                            </div>
+                            <small>/mês</small>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/5521995648559" class="btn-assine-topo" target="_blank">Assine</a>
+                </div>
+            </div>
+
+            <div class="pontinhos">
+                <span class="ponto ativo"></span>
+                <span class="ponto"></span>
+                <span class="ponto"></span>
+            </div>
+        </section>
+
+        <!-- Seção de Planos -->
+        <section id="planos">
+            <div class="container-planos">
+                <div class="cabecalho-secao">
+                    <span class="tag-secao">Móvel</span>
+                    <h2 class="titulo-secao">PLANOS 4G/5G</h2>
+                    <p class="desc-secao">A melhor cobertura para você nunca ficar offline</p>
+                </div>
+
+                <div id="grade-planos">
+                    <!-- Plano 10GB -->
+                    <div class="card-plano">
+                        <div class="topo-card">ECONÔMICO</div>
+                        <div class="corpo-card">
+                            <p class="marca">SelNet <strong>móvel</strong></p>
+                            <div class="mega-zao">
+                                <span class="numero">10</span>
+                                <span class="texto-mega">GIGA</span>
+                            </div>
+                            <hr>
+                            <p class="label-preco">POR APENAS</p>
+                            <div class="preco">
+                                <span class="rs">R$</span>
+                                <span class="valor">29</span>
+                                <span class="centavos">,90</span>
+                            </div>
+                            <span class="periodo">/MÊS</span>
+                            <p class="vencimento">Débito Automático</p>
+                            
+                            <ul class="lista-vantagens">
+                                <li><i class="fa-solid fa-check"></i> WhatsApp Ilimitado</li>
+                                <li><i class="fa-solid fa-check"></i> Ligações Ilimitadas</li>
+                                <li><i class="fa-solid fa-check"></i> SMS Ilimitado</li>
+                                <li><i class="fa-solid fa-check"></i> Sem fidelidade</li>
+                            </ul>
+
+                            <div class="tags-apps">
+                                <span>WhatsApp</span>
+                                <span>Waze</span>
+                            </div>
+                            <a href="https://wa.me/5521995648559" class="btn-assine" target="_blank">Assine</a>
+                        </div>
+                    </div>
+
+                    <!-- Plano 30GB -->
+                    <div class="card-plano">
+                        <div class="topo-card">MAIS VENDIDO</div>
+                        <div class="corpo-card">
+                            <p class="marca">SelNet <strong>móvel</strong></p>
+                            <div class="mega-zao">
+                                <span class="numero">30</span>
+                                <span class="texto-mega">GIGA</span>
+                            </div>
+                            <hr>
+                            <p class="label-preco">POR APENAS</p>
+                            <div class="preco">
+                                <span class="rs">R$</span>
+                                <span class="valor">49</span>
+                                <span class="centavos">,90</span>
+                            </div>
+                            <span class="periodo">/MÊS</span>
+                            <p class="vencimento">Débito Automático</p>
+                            
+                            <ul class="lista-vantagens">
+                                <li><i class="fa-solid fa-check"></i> Redes Sociais Ilimitadas</li>
+                                <li><i class="fa-solid fa-check"></i> Ligações Ilimitadas</li>
+                                <li><i class="fa-solid fa-check"></i> SMS Ilimitado</li>
+                                <li><i class="fa-solid fa-check"></i> Roaming Nacional</li>
+                            </ul>
+
+                            <div class="tags-apps">
+                                <span>Instagram</span>
+                                <span>Facebook</span>
+                                <span>WhatsApp</span>
+                            </div>
+                            <a href="https://wa.me/5521995648559" class="btn-assine" target="_blank">Assine</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diferenciais -->
+        <section id="diferenciais">
+            <div class="container-dif">
+                <div class="item-dif">
+                    <div class="icone-dif"><i class="fa-solid fa-tower-cell"></i></div>
+                    <h3>Cobertura 5G</h3>
+                    <p>Velocidade máxima em todo o território nacional</p>
+                </div>
+                <div class="item-dif">
+                    <div class="icone-dif"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <h3>Apps Ilimitados</h3>
+                    <p>Navegue nas redes sociais sem gastar sua franquia</p>
+                </div>
+                <div class="item-dif">
+                    <div class="icone-dif"><i class="fa-solid fa-sim-card"></i></div>
+                    <h3>eSIM Grátis</h3>
+                    <p>Ativação imediata sem necessidade de chip físico</p>
+                </div>
+                <div class="item-dif">
+                    <div class="icone-dif"><i class="fa-solid fa-handshake-simple"></i></div>
+                    <h3>Sem Fidelidade</h3>
+                    <p>Liberdade total para mudar de plano quando quiser</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <div id="rodape-conteudo">
+            <a href="index.html"><img src="assets/imagens/SelNet.png" alt="logo selnet" class="logo"></a>
+
+            <p>siga <a href="#">@SelNet</a></p>
+            <p>© 2026 SelNet - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+
+    <!-- Painel de Acessibilidade -->
+    <div id="painel-acessibilidade" aria-label="Ferramentas de acessibilidade">
+        <button id="btn-acessibilidade" aria-label="Abrir ferramentas de acessibilidade" title="Acessibilidade">
+            <i class="fa-solid fa-universal-access"></i>
+        </button>
+        <div id="opcoes-acessibilidade" role="region" aria-label="Opções de acessibilidade" hidden>
+            <p class="titulo-painel">Acessibilidade</p>
+
+            <div class="grupo-acesso">
+                <p class="label-grupo">Tamanho do texto</p>
+                <div class="controles-fonte">
+                    <button id="fonte-resetar" aria-label="Tamanho padrão">A</button>
+                    <button id="fonte-aumentar" aria-label="Aumentar fonte">A+</button>
+                </div>
+            </div>
+
+            <div class="grupo-acesso">
+                <p class="label-grupo">Contraste</p>
+                <button id="toggle-contraste" aria-pressed="false" aria-label="Ativar alto contraste">
+                    <i class="fa-solid fa-circle-half-stroke"></i>
+                    Alto contraste
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Estrutura do Modal Personalizado -->
+    <div id="meuModal" class="modal-fundo">
+        <div class="modal-conteudo">
+            <span class="modal-fechar" onclick="fecharModal()">&times;</span>
+            <h2 id="modal-titulo">Aviso</h2>
+            <p id="modal-mensagem">Mensagem do sistema.</p>
+            <button class="btn-modal" onclick="fecharModal()">Prosseguir</button>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

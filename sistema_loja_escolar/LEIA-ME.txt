@@ -1,0 +1,10 @@
+SISTEMA LOJA ESCOLAR MODELO (nome fictício, versão de portfólio)
+
+Controle de uniformes (venda, estoque, recibo, histórico) e de chaves de uma escola.
+
+1. Instale o Python 3 (python.org), marcando "Add Python to PATH".
+2. Dê dois cliques em iniciar.bat. O navegador abre sozinho em http://127.0.0.1:8765
+3. Deixe a janela preta aberta enquanto usa. Feche-a para encerrar.
+
+Dados: pasta "dados" (loja.db). Um backup automático é salvo em dados/backups a cada abertura.
+Todos os nomes, CNPJ e dados são fictícios.

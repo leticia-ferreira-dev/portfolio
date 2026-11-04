@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SelNet</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/mediaquery.css">
+    
+    <!-- Fontes e Ícones -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/20d3823a9d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header>
+        <div id="topo-container">
+
+          <button id="hamburguer">
+                <span></span><span></span><span></span>
+          </button>
+            
+                <a href="index.html"><img src="assets/imagens/SelNet.png" alt="logo selnet" class="logo"></a>
+            
+
+          <nav class="menu">
+
+              <ul>
+                  <li class="tem-submenu">
+
+                      <a href="#movel">Móvel ▾</a>
+                      <ul class="submenu">
+                          <li><a href="planos_movel.html">Planos</a></li>
+                          <li><a href="#recarga">Recarga</a></li>
+                      </ul>
+                 </li>
+
+                  <li><a href="#planos">Internet</a></li>
+
+                  <li class="tem-submenu">
+                      <a href="#streaming">TV & Streaming ▾</a>
+                      <ul class="submenu">
+                          <li><a href="#tv">TV</a></li>
+                          <li><a href="#streaming-apps">Streaming</a></li>
+                      </ul>
+                  </li>
+
+                  <li><a href="https://wa.me/5521995648559" target="_blank">Atendimento</a></li>
+
+                  <li><a href="../login_cadastro/login/login.html">Financeiro</a></li>
+              </ul>
+          </nav>
+
+
+            <div id="acoes-topo">
+
+                <a href="https://wa.me/5521995648559" id="btn-whats" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span id="nmr">(21) 99564-8559</span>
+                </a>
+
+                <a href="../login_cadastro/login/login.html" id="alogin">
+                    <i class="fa-solid fa-user" id="login"></i>
+                </a>
+
+            </div>
+        </div>
+    </header>
+
+
+    <main id="principal">
+        
+        <!-- Seção Hero / Banner -->
+        <section id="banner-zao">
+            <div class="banner-fundo">
+                <img src="assets/imagens/hero_banner.png" alt="SelNet Fibra Óptica" class="img-fundo">
+                <div class="camada-escura"></div>
+            </div>
+            
+            <div class="conteudo-banner">
+                <div class="texto-banner">
+                    <span class="tag-topo">A nova internet de Bonsucesso</span>
+                    <h1 class="titulo-grande">
+                        Ultra-velocidade com<br>
+                        <span class="destaque-laranja">Fibra Óptica</span><br>
+                        de verdade.
+                    </h1>
+                    <p class="sub-titulo">Wi-Fi 6 · IP Público · Portabilidade · Sem Fidelidade</p>
+                    <a href="#planos" class="btn-ver-planos">Ver planos</a>
+                </div>
+
+                <div id="card-destaque">
+                    <div class="selo-card">SelNet fibra</div>
+                    <div class="info-plano">
+                        <div class="velocidade">
+                            <span class="num-mega">500</span>
+                            <span class="unidade">MEGA</span>
+                        </div>
+                        <div class="divisor-v"></div>
+                        <div class="preco-card">
+                            <small>Por apenas</small>
+                            <div class="valor-zao">
+                                <span class="cifrao">R$</span>
+                                <span class="reais">69</span>
+                                <span class="centavos">,90</span>
+                            </div>
+                            <small>/mês</small>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/5521995648559" class="btn-assine-topo" target="_blank">Assine</a>
+                </div>
+            </div>
+
+            <div class="pontinhos">
+                <span class="ponto ativo"></span>
+                <span class="ponto"></span>
+                <span class="ponto"></span>
+            </div>
+        </section>
+
+        <!-- Seção de Planos -->
+        <section id="planos">
+            <div class="container-planos">
+                <div class="cabecalho-secao">
+                    <span class="tag-secao">Internet</span>
+                    <h2 class="titulo-secao">FIBRA ÓPTICA</h2>
+                    <p class="desc-secao">Escolha o plano ideal para você e sua família</p>
+                </div>
+
+                <div id="grade-planos">
+                    <!-- Plano 500 -->
+                    <div class="card-plano">
+                        <div class="topo-card">OFERTA POR TEMPO LIMITADO</div>
+                        <div class="corpo-card">
+                            <p class="marca">SelNet <strong>fibra</strong></p>
+                            <div class="mega-zao">
+                                <span class="numero">500</span>
+                                <span class="texto-mega">MEGA</span>
+                            </div>
+                            <hr>
+                            <p class="label-preco">POR APENAS</p>
+                            <div class="preco">
+                                <span class="rs">R$</span>
+                                <span class="valor">69</span>
+                                <span class="centavos">,90</span>
+                            </div>
+                            <span class="periodo">/MÊS</span>
+                            <p class="vencimento">Após o vencimento R$ 79,90</p>
+                            
+                            <ul class="lista-vantagens">
+                                <li><i class="fa-solid fa-check"></i> Wi-Fi 6 incluso</li>
+                                <li><i class="fa-solid fa-check"></i> IP Público</li>
+                                <li><i class="fa-solid fa-check"></i> Sem fidelidade</li>
+                                <li><i class="fa-solid fa-check"></i> App de Streaming incluso</li>
+                            </ul>
+
+                            <div class="tags-apps">
+                                <span>Filmes</span>
+                                <span>Séries</span>
+                                <span>Desenhos</span>
+                                <span>TV ao Vivo</span>
+                            </div>
+                            <a href="https://wa.me/5521995648559" class="btn-assine" target="_blank">Assine</a>
+                        </div>
+                    </div>
+
+                    <!-- Plano 900 -->
+                    <div class="card-plano">
+                        <div class="topo-card">MELHOR OFERTA</div>
+                        <div class="corpo-card">
+                            <p class="marca">SelNet <strong>fibra</strong></p>
+                            <div class="mega-zao">
+                                <span class="numero">900</span>
+                                <span class="texto-mega">MEGA</span>
+                            </div>
+                            <hr>
+                            <p class="label-preco">POR APENAS</p>
+                            <div class="preco">
+                                <span class="rs">R$</span>
+                                <span class="valor">99</span>
+                                <span class="centavos">,90</span>
+                            </div>
+                            <span class="periodo">/MÊS</span>
+                            <p class="vencimento">Após o vencimento R$ 109,90</p>
+                            
+                            <ul class="lista-vantagens">
+                                <li><i class="fa-solid fa-check"></i> Wi-Fi 6 incluso</li>
+                                <li><i class="fa-solid fa-check"></i> IP Público</li>
+                                <li><i class="fa-solid fa-check"></i> Sem fidelidade</li>
+                                <li><i class="fa-solid fa-check"></i> App de Streaming incluso</li>
+                            </ul>
+
+                            <div class="tags-apps">
+                                <span>Filmes</span>
+                                <span>Séries</span>
+                                <span>Desenhos</span>
+                                <span>TV ao Vivo</span>
+                            </div>
+                            <a href="https://wa.me/5521995648559" class="btn-assine" target="_blank">Assine</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diferenciais -->
+        <section id="diferenciais">
+            <div class="container-dif">
+                <div class="item-dif">
+                    <div class="icone-dif"><i class="fa-solid fa-wifi"></i></div>
+                    <h3>Wi-Fi 6</h3>
+                    <p>A tecnologia mais avançada para sua casa</p>
+                </div>
+                <div class="item-dif">
+                    <div class="icone-dif"><i class="fa-solid fa-globe"></i></div>
+                    <h3>IP Público</h3>
+                    <p>Acesso remoto e jogos online sem travamento</p>
+                </div>
+                <div class="item-dif">
+                    <div class="icone-dif"><i class="fa-solid fa-right-left"></i></div>
+                    <h3>Portabilidade</h3>
+                    <p>Leve seu número sem complicação</p>
+                </div>
+                <div class="item-dif">
+                    <div class="icone-dif"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Sem Fidelidade</h3>
+                    <p>Cancele quando quiser, sem multa</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <div id="rodape-conteudo">
+            <a href="index.html"><img src="assets/imagens/SelNet.png" alt="logo selnet" class="logo"></a>
+
+            <p>siga <a href="#">@SelNet</a></p>
+            <p>© 2026 SelNet - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+
+    <!-- Painel de Acessibilidade -->
+    <div id="painel-acessibilidade" aria-label="Ferramentas de acessibilidade">
+        <button id="btn-acessibilidade" aria-label="Abrir ferramentas de acessibilidade" title="Acessibilidade">
+            <i class="fa-solid fa-universal-access"></i>
+        </button>
+        <div id="opcoes-acessibilidade" role="region" aria-label="Opções de acessibilidade" hidden>
+            <p class="titulo-painel">Acessibilidade</p>
+
+            <div class="grupo-acesso">
+                <p class="label-grupo">Tamanho do texto</p>
+                <div class="controles-fonte">
+                    <button id="fonte-resetar" aria-label="Tamanho padrão">A</button>
+                    <button id="fonte-aumentar" aria-label="Aumentar fonte">A+</button>
+                </div>
+            </div>
+
+            <div class="grupo-acesso">
+                <p class="label-grupo">Contraste</p>
+                <button id="toggle-contraste" aria-pressed="false" aria-label="Ativar alto contraste">
+                    <i class="fa-solid fa-circle-half-stroke"></i>
+                    Alto contraste
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Estrutura do Modal Personalizado -->
+    <div id="meuModal" class="modal-fundo">
+        <div class="modal-conteudo">
+            <span class="modal-fechar" onclick="fecharModal()">&times;</span>
+            <h2 id="modal-titulo">Aviso</h2>
+            <p id="modal-mensagem">Mensagem do sistema.</p>
+            <button class="btn-modal" onclick="fecharModal()">Prosseguir</button>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - SelNet</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Syne:wght@700;800&display=swap">
+    <script src="https://kit.fontawesome.com/20d3823a9d.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="assets/estilos/style.css">
+    <link rel="stylesheet" href="assets/estilos/midia-query.css">
+</head>
+
+<body>
+
+    <main>
+        <section id="cadastro-container">
+
+            <div id="form">
+                <div class="form-header">
+                    <h1>Crie sua conta</h1>
+                    <p>Preencha os campos abaixo para se cadastrar.</p>
+                </div>
+
+                <form method="post" autocomplete="on" id="form-cadastro" novalidate>
+
+                    <!-- DADOS PESSOAIS -->
+                    <p class="secao-titulo">Dados Pessoais</p>
+
+                    <div class="linha">
+                        <div class="campo">
+                            <label for="inome">Nome completo</label>
+                            <div class="campo-inner">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" name="nome" id="inome" placeholder="Seu nome completo" required maxlength="80">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="linha dois">
+                        <div class="campo">
+                            <label for="idata">Data de nascimento</label>
+                            <div class="campo-inner">
+                                <i class="fa-solid fa-cake-candles"></i>
+                                <input type="date" name="data" id="idata" required>
+                            </div>
+                        </div>
+                        <div class="campo">
+                            <label for="sexo">Sexo</label>
+                            <div class="campo-inner">
+                                <i class="fa-solid fa-venus-mars"></i>
+                                <select name="sexo" id="sexo" required>
+                                    <option value="">Selecione</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Feminino">Feminino</option>
+                                    <option value="Outro">Outro</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="linha">
+                        <div class="campo">
+                            <label for="inome-materno">Nome materno</label>
+                            <div class="campo-inner">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" name="nome_materno" id="inome-materno" placeholder="Nome completo da mãe" required maxlength="80">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="linha">
+                        <div class="campo">
+                            <label for="icpf">CPF</label>
+                            <div class="campo-inner">
+                                <i class="fa-solid fa-id-card"></i>
+                                <input type="text" name="cpf" id="icpf" placeholder="000.000.000-00" required maxlength="14">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CONTATO -->
+                    <p class="secao-titulo">Contato</p>
+
+                    <div class="linha">
+                        <div class="campo">
+                            <label for="iemail">E-mail</label>
+                            <div class="campo-inner">
+                                <i class="fa-solid fa-envelope"></i>
+                                <input type="email" name="email" id="iemail" placeholder="seu@email.com" autocomplete="email" required maxlength="50">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="linha dois">
+                        <div class="campo">
+                            <label for="itelcel">Telefone celular</label>
+                            <div class="campo-inner">
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+                                <input type="tel" name="celular" id="itelcel" placeholder="(00) 00000-0000" required maxlength="15">
+                            </div>
+                        </div>
+                        <div class="campo">
+                            <label for="itelfix">Telefone fixo <span class="opcional">(opcional)</span></label>
+                            <div class="campo-inner">
+                                <i class="fa-solid fa-phone"></i>
+                                <input type="tel" name="fixo" id="itelfix" placeholder="(00) 0000-0000" maxlength="14">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- ENDEREÇO -->
+
+                    <p class="secao-titulo">Endereço</p>
+                    <div class="linha dois">
+                        <div class="campo" style="flex: 0 0 120px; min-width:0;">
+                            <label for="icep">CEP</label>
+                            <div class="campo-inner">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <input type="text" name="cep" id="icep" placeholder="00000-000" required maxlength="9">
+                            </div>
+                        </div>
+                        <div class="campo" style="grid-column: span 1; flex: 2;">
+                            <label for="ilogradouro">Logradouro</label>
+                            <div class="campo-inner">
+                                    <i class="fa-solid fa-road"></i>
+                                <input type="text" name="logradouro" id="ilogradouro" placeholder="Rua, Av., Trav..." required maxlength="100">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="linha dois">
+                        <div class="campo" style="flex: 0 0 120px; min-width:0;">
+                            <label for="inumero">Número</label>
+                            <div class="campo-inner">
+                                <input type="text" name="numero" id="inumero" placeholder="Nº" required maxlength="10">
+                            </div>
+                        </div>
+                        <div class="campo">
+                            <label for="icomplemento">Complemento <span class="opcional">(opcional)</span></label>
+                            <div class="campo-inner">
+                                            <input type="text" name="complemento" id="icomplemento" placeholder="Apto, Bloco..." maxlength="50">
+        
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="linha">
+                        <div class="campo">
+                            <label for="ibairro">Bairro</label>
+                            <div class="campo-inner">
+                                <input type="text" name="bairro" id="ibairro" placeholder="Seu bairro" required maxlength="60">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="linha dois">
+                        <div class="campo" style="flex: 2;">
+                            <label for="icidade">Cidade</label>
+                            <div class="campo-inner">
+                                <i class="fa-solid fa-city"></i>
+                                <input type="text" name="cidade" id="icidade" placeholder="Sua cidade" required maxlength="60">
+                            </div>
+                        </div>
+                        <div class="campo" style="flex: 0 0 100px; min-width:0;">
+                            <label for="iestado">Estado</label>
+                            <div class="campo-inner">
+                                <select name="estado" id="iestado" required>
+                                    <option value="">UF</option>
+                                    <option>AC</option><option>AL</option><option>AP</option><option>AM</option>
+                                    <option>BA</option><option>CE</option><option>DF</option><option>ES</option>
+                                    <option>GO</option><option>MA</option><option>MT</option><option>MS</option>
+                                    <option>MG</option><option>PA</option><option>PB</option><option>PR</option>
+                                    <option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+                                    <option>RS</option><option>RO</option><option>RR</option><option>SC</option>
+                                    <option>SP</option><option>SE</option><option>TO</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SENHA -->
+                    <p class="secao-titulo">Segurança</p>
+
+                    <div class="linha dois">
+                        <div class="campo">
+                            <label for="isenha">Senha</label>
+                            <div class="campo-inner">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" name="senha" id="isenha" placeholder="••••••••" autocomplete="new-password" required minlength="8" maxlength="8">
+                            </div>
+                        </div>
+                        <div class="campo">
+                            <label for="iconfirmarSenha">Confirmar senha</label>
+                            <div class="campo-inner">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" name="confirmarSenha" id="iconfirmarSenha" placeholder="••••••••" required minlength="8" maxlength="8">
+                            </div>
+                        </div>
+                    </div>
+
+                    <p id="erroSenha">As senhas não coincidem</p>
+
+                    <!-- BOTÕES -->
+                    <div class="botoes-form">
+                        <button type="reset" id="btn-limpar">Limpar</button>
+                        <input type="submit" value="Cadastrar-se" id="entrar">
+                    </div>
+
+                </form>
+
+                <div class="links-form">
+                    <a href="../login/login.html" class="botao">Já tem uma conta? <span>Entrar</span></a>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Painel de Acessibilidade -->
+    <div id="painel-acessibilidade" aria-label="Ferramentas de acessibilidade">
+        <button id="btn-acessibilidade" aria-label="Abrir ferramentas de acessibilidade" title="Acessibilidade">
+            <i class="fa-solid fa-universal-access"></i>
+        </button>
+        <div id="opcoes-acessibilidade" role="region" aria-label="Opções de acessibilidade" style="display: none;">
+            <p class="titulo-painel">Acessibilidade</p>
+            <div class="grupo-acesso">
+                <p class="label-grupo">Tamanho do texto</p>
+                <div class="controles-fonte">
+                    <button id="fonte-resetar" aria-label="Tamanho padrão">A</button>
+                    <button id="fonte-aumentar" aria-label="Aumentar fonte">A+</button>
+                </div>
+            </div>
+            <div class="grupo-acesso">
+                <p class="label-grupo">Contraste</p>
+                <button id="toggle-contraste" aria-pressed="false" aria-label="Ativar alto contraste">
+                    <i class="fa-solid fa-circle-half-stroke"></i>
+                    Alto contraste
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Estrutura do Modal Personalizado -->
+    <div id="meuModal" class="modal-fundo">
+        <div class="modal-conteudo">
+            <h2 id="modal-titulo">Aviso</h2>
+            <p id="modal-mensagem">Mensagem do sistema.</p>
+            <button class="btn-modal" onclick="fecharModal()">Entendi</button>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+</html>

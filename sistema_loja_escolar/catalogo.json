@@ -1,0 +1,618 @@
+[
+ {
+  "nome": "Blusa de Manga Branca (unissex)",
+  "observacao": "",
+  "variacoes": [
+   {
+    "tamanho": "2",
+    "preco": 60.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "4",
+    "preco": 60.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "6",
+    "preco": 60.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "8",
+    "preco": 65.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "10",
+    "preco": 65.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "12",
+    "preco": 65.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "P",
+    "preco": 70.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "M",
+    "preco": 70.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "G",
+    "preco": 75.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "GG",
+    "preco": 75.0,
+    "estoque": 10
+   }
+  ]
+ },
+ {
+  "nome": "Blusa de Manga Amarela (unissex)",
+  "observacao": "",
+  "variacoes": [
+   {
+    "tamanho": "2",
+    "preco": 60.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "4",
+    "preco": 60.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "6",
+    "preco": 60.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "8",
+    "preco": 65.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "10",
+    "preco": 65.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "12",
+    "preco": 65.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "P",
+    "preco": 70.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "M",
+    "preco": 70.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "G",
+    "preco": 75.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "GG",
+    "preco": 75.0,
+    "estoque": 10
+   }
+  ]
+ },
+ {
+  "nome": "Camiseta de Educação Física (feminina)",
+  "observacao": "Pode ser usado fora da educação física",
+  "variacoes": [
+   {
+    "tamanho": "2",
+    "preco": 60.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "4",
+    "preco": 60.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "6",
+    "preco": 60.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "8",
+    "preco": 65.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "10",
+    "preco": 65.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "12",
+    "preco": 65.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "P",
+    "preco": 70.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "M",
+    "preco": 70.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "G",
+    "preco": 75.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "GG",
+    "preco": 75.0,
+    "estoque": 10
+   }
+  ]
+ },
+ {
+  "nome": "Camiseta de Educação Física (masculina)",
+  "observacao": "Pode ser usado fora da educação física",
+  "variacoes": [
+   {
+    "tamanho": "2",
+    "preco": 60.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "4",
+    "preco": 60.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "6",
+    "preco": 60.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "8",
+    "preco": 65.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "10",
+    "preco": 65.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "12",
+    "preco": 65.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "P",
+    "preco": 70.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "M",
+    "preco": 70.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "G",
+    "preco": 75.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "GG",
+    "preco": 75.0,
+    "estoque": 10
+   }
+  ]
+ },
+ {
+  "nome": "Bermuda de Microfibra (masculino)",
+  "observacao": "",
+  "variacoes": [
+   {
+    "tamanho": "2",
+    "preco": 60.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "4",
+    "preco": 60.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "6",
+    "preco": 60.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "8",
+    "preco": 65.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "10",
+    "preco": 65.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "12",
+    "preco": 65.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "P",
+    "preco": 70.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "M",
+    "preco": 70.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "G",
+    "preco": 75.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "GG",
+    "preco": 75.0,
+    "estoque": 10
+   }
+  ]
+ },
+ {
+  "nome": "Calça de Helanca Aveludada (unissex)",
+  "observacao": "",
+  "variacoes": [
+   {
+    "tamanho": "2",
+    "preco": 75.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "4",
+    "preco": 75.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "6",
+    "preco": 75.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "8",
+    "preco": 75.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "10",
+    "preco": 75.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "12",
+    "preco": 75.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "P",
+    "preco": 80.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "M",
+    "preco": 80.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "G",
+    "preco": 80.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "GG",
+    "preco": 80.0,
+    "estoque": 10
+   }
+  ]
+ },
+ {
+  "nome": "Bermuda de Helanca (unissex)",
+  "observacao": "",
+  "variacoes": [
+   {
+    "tamanho": "2",
+    "preco": 65.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "4",
+    "preco": 65.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "6",
+    "preco": 65.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "8",
+    "preco": 70.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "10",
+    "preco": 70.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "12",
+    "preco": 70.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "P",
+    "preco": 75.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "M",
+    "preco": 75.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "G",
+    "preco": 80.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "GG",
+    "preco": 80.0,
+    "estoque": 10
+   }
+  ]
+ },
+ {
+  "nome": "Calça de Microfibra (unissex)",
+  "observacao": "",
+  "variacoes": [
+   {
+    "tamanho": "2",
+    "preco": 75.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "4",
+    "preco": 75.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "6",
+    "preco": 75.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "8",
+    "preco": 75.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "10",
+    "preco": 75.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "12",
+    "preco": 75.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "P",
+    "preco": 80.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "M",
+    "preco": 80.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "G",
+    "preco": 80.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "GG",
+    "preco": 80.0,
+    "estoque": 10
+   }
+  ]
+ },
+ {
+  "nome": "Bermuda Corsário (feminino)",
+  "observacao": "",
+  "variacoes": [
+   {
+    "tamanho": "2",
+    "preco": 35.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "4",
+    "preco": 35.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "6",
+    "preco": 35.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "8",
+    "preco": 35.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "10",
+    "preco": 35.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "12",
+    "preco": 35.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "P",
+    "preco": 35.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "M",
+    "preco": 35.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "G",
+    "preco": 35.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "GG",
+    "preco": 35.0,
+    "estoque": 10
+   }
+  ]
+ },
+ {
+  "nome": "Casaco de Microfibra (unissex)",
+  "observacao": "",
+  "variacoes": [
+   {
+    "tamanho": "2",
+    "preco": 90.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "4",
+    "preco": 90.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "6",
+    "preco": 90.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "8",
+    "preco": 95.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "10",
+    "preco": 95.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "12",
+    "preco": 95.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "P",
+    "preco": 100.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "M",
+    "preco": 100.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "G",
+    "preco": 110.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "GG",
+    "preco": 110.0,
+    "estoque": 10
+   }
+  ]
+ },
+ {
+  "nome": "Casaco de Helanca Aveludado (unissex)",
+  "observacao": "",
+  "variacoes": [
+   {
+    "tamanho": "2",
+    "preco": 90.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "4",
+    "preco": 90.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "6",
+    "preco": 90.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "8",
+    "preco": 95.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "10",
+    "preco": 95.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "12",
+    "preco": 95.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "P",
+    "preco": 100.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "M",
+    "preco": 100.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "G",
+    "preco": 110.0,
+    "estoque": 10
+   },
+   {
+    "tamanho": "GG",
+    "preco": 110.0,
+    "estoque": 10
+   }
+  ]
+ }
+]

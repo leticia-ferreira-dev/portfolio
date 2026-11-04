@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sistema Loja Escolar Modelo</title>
+<style>
+:root{--azul:#436498;--azul2:#34507c;--tinta:#1f2a3a;--fundo:#eef1f5;--linha:#d8dde5;--alerta:#b3382c;--ok:#2e7d4f;--mudo:#667085}
+*{box-sizing:border-box;margin:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--fundo);color:var(--tinta);line-height:1.45}
+h1,h2,h3{font-family:Georgia,'Times New Roman',serif;font-weight:600}
+header{background:var(--azul2);color:#fff;padding:14px 24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+header h1{font-size:1.25rem;flex:1}header a{color:#fff;text-decoration:none;font-size:.95rem}
+.quem{display:flex;gap:8px;align-items:center;font-size:.9rem}.quem select{padding:6px 8px;border-radius:6px;border:0}
+main{max-width:1180px;margin:0 auto;padding:24px}
+.menu{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.mod{display:block;text-align:left;background:#fff;border:1px solid var(--linha);border-left:6px solid var(--azul);border-radius:8px;padding:22px;cursor:pointer;font:inherit;color:inherit}
+.mod:hover:not(:disabled){border-color:var(--azul);background:#f7f9fc}.mod h2{font-size:1.25rem}.mod p{color:var(--mudo);font-size:.92rem;margin-top:4px}
+.mod:disabled{border-left-color:var(--linha);cursor:default;opacity:.7}
+.abas{display:flex;gap:4px;border-bottom:2px solid var(--linha);margin:12px 0 20px}
+.abas button{padding:10px 20px;border:0;background:none;font:inherit;font-weight:600;color:var(--mudo);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px}
+.abas button.on{color:var(--azul2);border-bottom-color:var(--azul)}
+.cols{display:grid;grid-template-columns:1fr 340px;gap:24px;align-items:start}
+@media(max-width:860px){.cols{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--linha);border-radius:8px;padding:20px;margin-bottom:16px}
+.card h3{margin-bottom:12px}
+.grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+label{display:flex;flex-direction:column;gap:4px;font-size:.88rem;font-weight:600}
+input,select{padding:9px 10px;border:1.5px solid #c5ccd6;border-radius:6px;font:inherit;background:#fff}
+input:focus,select:focus,button:focus-visible,summary:focus-visible{outline:3px solid #9db6dd;outline-offset:1px}
+button.b{padding:9px 16px;border:0;border-radius:6px;background:var(--azul);color:#fff;font:inherit;font-weight:600;cursor:pointer}
+button.b:hover:not(:disabled){background:var(--azul2)}button.b:disabled{background:#b8c0cc;cursor:not-allowed}
+button.b.sec{background:#e3e8ef;color:var(--tinta)}button.b.perigo{background:var(--alerta)}button.b.peq{padding:5px 11px;font-size:.88rem}
+table{width:100%;border-collapse:collapse;font-size:.93rem}th{text-align:left;color:var(--mudo);font-weight:600;padding:8px;border-bottom:2px solid var(--linha)}
+td{padding:8px;border-bottom:1px solid #e8ebf0;vertical-align:middle}td input{width:76px}.num{text-align:right}
+.baixo{color:var(--alerta);font-weight:700}.cancelada{color:var(--mudo);text-decoration:line-through}
+details{border:1px solid var(--linha);border-radius:8px;margin-bottom:10px;background:#fff}
+summary{padding:14px 18px;cursor:pointer;font-weight:600;display:flex;justify-content:space-between}
+details[open] summary{border-bottom:1px solid var(--linha)}details .obs{background:#fff3cd;padding:6px 18px;font-size:.88rem}
+.carrinho{position:sticky;top:16px}.total{font-size:1.4rem;font-weight:700;margin:12px 0}
+.vazio{color:var(--mudo);padding:18px 0;text-align:center}
+#toast{position:fixed;top:16px;right:16px;padding:12px 20px;border-radius:6px;color:#fff;z-index:50}
+#recibo{display:none;position:fixed;inset:0;background:rgba(20,30,45,.75);overflow:auto;z-index:40;padding:20px}
+#recibo>div{max-width:780px;margin:0 auto;background:#fff;padding:32px;border-radius:8px}
+.via{padding-bottom:22px;margin-bottom:22px;border-bottom:2px dashed #bbb}.via:last-of-type{border:0;margin:0}
+.via h3{text-align:center}.via .c{text-align:center;font-size:.9rem;color:#444}.via .r{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #eee}
+@media print{body *{visibility:hidden}#recibo,#recibo *{visibility:visible}#recibo{position:absolute;background:none;padding:0}.nao-imprimir{display:none}.via:first-of-type{page-break-after:always}}
+</style>
+</head>
+<body>
+<header><h1><a href="#/">Sistema Loja Escolar Modelo</a></h1>
+<div class="quem">Funcionário: <select id="me" onchange="trocarMe(this.value)"></select><button class="b sec peq" onclick="novoFunc()">+ Novo</button></div></header>
+<main id="app"></main><div id="recibo"></div>
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const R=c=>(c/100).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+const dt=s=>s?new Date(s).toLocaleString('pt-BR',{dateStyle:'short',timeStyle:'short'}):'—';
+const TURMAS=['Maternal','Pré 1','Pré 2',...[1,2,3,4,5,6,7,8,9].map(n=>n+'º ano'),'1ª série EM','2ª série EM','3ª série EM'];
+const S={func:[],me:localStorage.getItem('me')||'',cat:[],cart:[],vendas:[],aba:{}};
+async function api(p,m='GET',b){const r=await fetch(p,{method:m,headers:{'Content-Type':'application/json'},body:b?JSON.stringify(b):undefined});const j=await r.json();if(!r.ok)throw new Error(j.erro);return j}
+function aviso(t,erro){const e=document.createElement('div');e.id='toast';e.textContent=t;e.style.background=erro?'var(--alerta)':'var(--ok)';document.body.append(e);setTimeout(()=>e.remove(),3200)}
+const tenta=f=>async(...a)=>{try{await f(...a)}catch(e){aviso(e.message,1)}};
+const opts=(l,sel)=>l.map(x=>`<option value="${esc(x.id??x)}" ${String(x.id??x)===String(sel)?'selected':''}>${esc(x.nome??x)}</option>`).join('');
+
+async function carregarFunc(){S.func=await api('/api/funcionarios');if(!S.func.some(f=>String(f.id)===S.me))S.me='';$('#me').innerHTML='<option value="">Selecione…</option>'+opts(S.func,S.me)}
+function trocarMe(v){S.me=v;localStorage.setItem('me',v)}
+const novoFunc=tenta(async()=>{const n=prompt('Nome do funcionário:');if(!n)return;await api('/api/funcionarios','POST',{nome:n});await carregarFunc();const f=S.func.find(f=>f.nome===n.trim());if(f){$('#me').value=f.id;trocarMe(String(f.id))}});
+const exigeMe=()=>{if(!S.me)throw new Error('Escolha o funcionário no topo da página.')};
+
+const MODULOS=[['uniformes','Uniformes','Venda, estoque e histórico de vendas'],['segunda-via','Segunda via','Histórico escolar, certificado e carteirinha'],['declaracoes','Declarações',''],['segunda-chamada','Segunda chamada',''],['livros','Venda de livros',''],['chaves','Controle de chaves','Retirada, devolução e histórico']];
+const ATIVOS=['uniformes','chaves'];
+function rota(){const m=location.hash.replace('#/','');if(m==='uniformes')return uniformes();if(m==='chaves')return chaves();menu()}
+function menu(){$('#app').innerHTML='<h2 style="margin-bottom:16px">O que você quer fazer?</h2><div class="menu">'+MODULOS.map(([id,n,d])=>{const on=ATIVOS.includes(id);return `<button class="mod" ${on?`onclick="location.hash='#/${id}'"`:'disabled'}><h2>${n}</h2><p>${on?d:'Em breve'}</p></button>`}).join('')+'</div>'}
+function abas(mod,lista,atual){return `<div class="abas">${lista.map(([k,n])=>`<button class="${k===atual?'on':''}" onclick="S.aba.${mod}='${k}';rota()">${n}</button>`).join('')}</div>`}
+
+/* ---------- UNIFORMES ---------- */
+const uniformes=tenta(async()=>{S.cat=await api('/api/catalogo');const a=S.aba.u||'venda';
+ $('#app').innerHTML=`<h2>Uniformes</h2>${abas('u',[['venda','Venda'],['estoque','Estoque'],['hist','Histórico']],a)}<div id="v"></div>`;
+ ({venda:vVenda,estoque:vEstoque,hist:vHist})[a]()});
+const noCarrinho=id=>S.cart.filter(i=>i.vid===id).reduce((s,i)=>s+i.q,0);
+function vVenda(){
+ $('#v').innerHTML=`<div class="cols"><div>
+ <div class="card"><h3>Dados do aluno</h3><div class="grade">
+ <label>Nome completo<input id="an" autocomplete="off"></label>
+ <label>Turma<select id="at"><option value="">Selecione</option>${opts(TURMAS)}</select></label>
+ <label>Ano<input id="aa" type="number" min="2020" max="2040" value="${new Date().getFullYear()}"></label></div></div>
+ ${S.cat.map(p=>`<details><summary>${esc(p.nome)}<span></span></summary>${p.observacao?`<div class="obs">${esc(p.observacao)}</div>`:''}
+ <table><thead><tr><th>Tamanho</th><th class="num">Preço</th><th class="num">Estoque</th><th>Qtd</th><th></th></tr></thead><tbody>
+ ${p.variacoes.map(v=>{const livre=v.estoque-noCarrinho(v.id);return `<tr><td><b>${esc(v.tamanho)}</b></td><td class="num">${R(v.preco_centavos)}</td><td class="num ${livre<=v.estoque_minimo?'baixo':''}">${livre}</td>
+ <td><input id="q${v.id}" type="number" min="1" value="1"></td><td><button class="b peq" ${livre<1?'disabled':''} onclick="add(${v.id},${p.id})">Adicionar</button></td></tr>`}).join('')}</tbody></table></details>`).join('')}</div>
+ <aside class="card carrinho"><h3>Carrinho</h3><div id="cart"></div></aside></div>`;cart()}
+function achar(vid){for(const p of S.cat){const v=p.variacoes.find(v=>v.id===vid);if(v)return{p,v}}}
+const add=tenta(vid=>{const{p,v}=achar(vid),q=parseInt($('#q'+vid).value);if(!(q>0))throw new Error('Informe a quantidade.');
+ if(q>v.estoque-noCarrinho(vid))throw new Error('Quantidade indisponível no estoque.');
+ const i=S.cart.find(i=>i.vid===vid);i?i.q+=q:S.cart.push({vid,nome:p.nome,tam:v.tamanho,preco:v.preco_centavos,q});vVenda()});
+const tira=i=>{S.cart.splice(i,1);vVenda()};
+function cart(){const t=S.cart.reduce((s,i)=>s+i.preco*i.q,0);
+ $('#cart').innerHTML=(S.cart.length?S.cart.map((i,n)=>`<div style="padding:8px 0;border-bottom:1px solid #e8ebf0"><b>${esc(i.nome)}</b><br>Tam. ${esc(i.tam)} · ${i.q} × ${R(i.preco)} = <b>${R(i.preco*i.q)}</b> <button class="b perigo peq" onclick="tira(${n})">Remover</button></div>`).join(''):'<div class="vazio">Carrinho vazio</div>')+
+ `<div class="total">Total: ${R(t)}</div><label>Pagamento<select id="pg" onchange="$('#pc').style.display=this.value==='Crédito'?'flex':'none'"><option value="">Selecione</option><option>Débito</option><option>Crédito</option><option>Pix</option><option>Dinheiro</option></select></label>
+ <label id="pc" style="display:none;margin-top:8px">Parcelas<select id="pp">${[1,2,3,4,5,6].map(n=>`<option value="${n}">${n===1?'À vista':n+'x sem juros'}</option>`).join('')}</select></label>
+ <button class="b" style="width:100%;margin-top:14px;padding:13px" ${S.cart.length?'':'disabled'} onclick="finalizar()">Finalizar compra</button>`}
+const finalizar=tenta(async()=>{exigeMe();const a={nome:$('#an').value,turma:$('#at').value,ano:$('#aa').value};
+ if(!a.nome.trim()||!a.turma||!a.ano)throw new Error('Preencha nome, turma e ano do aluno.');const pg=$('#pg').value;if(!pg)throw new Error('Escolha a forma de pagamento.');
+ const parc=pg==='Crédito'?+$('#pp').value:1;
+ const v=await api('/api/vendas','POST',{aluno:a,funcionario_id:+S.me,pagamento:pg,parcelas:parc,itens:S.cart.map(i=>({variacao_id:i.vid,quantidade:i.q}))});
+ S.cart=[];recibo(v);uniformes()});
+function recibo(v){const via=t=>`<div class="via"><div class="nao-imprimir" style="text-align:right;font-weight:700;color:#666">${t}</div><h3>RECIBO DE COMPRA Nº ${v.id}</h3><p class="c">Loja de Uniformes — Loja Escolar Modelo<br>CNPJ: 00.000.000/0001-00 (fictício)</p>
+ <p style="margin:14px 0">Aluno: <b>${esc(v.aluno)}</b> · ${esc(v.turma)} · ${v.ano}<br>Funcionário: ${esc(v.funcionario)} · ${dt(v.data)}<br>Pagamento: ${esc(v.pagamento)}${v.pagamento==='Crédito'?` (${v.parcelas}x sem juros)`:''}${v.status==='cancelada'?'<br><b style="color:#b3382c">VENDA CANCELADA</b>':''}</p>
+ ${v.itens.map(i=>`<div class="r"><span>${esc(i.produto)} — Tam. ${esc(i.tamanho)}<br>${i.quantidade} × ${R(i.preco_centavos)}</span><b>${R(i.quantidade*i.preco_centavos)}</b></div>`).join('')}
+ <p style="text-align:right;font-size:1.3rem;font-weight:700;margin-top:12px">Total: ${R(v.total_centavos)}</p><p class="nao-imprimir" style="display:none"></p><p style="font-size:.85rem;margin-top:6px">${t}</p></div>`;
+ $('#recibo').innerHTML=`<div>${via('1ª VIA — CLIENTE')}${via('2ª VIA — ESTABELECIMENTO')}<div class="nao-imprimir" style="text-align:center;margin-top:18px"><button class="b" onclick="print()">Imprimir</button> <button class="b sec" onclick="$('#recibo').style.display='none'">Fechar</button></div></div>`;$('#recibo').style.display='block'}
+
+function vEstoque(){$('#v').innerHTML=S.cat.map(p=>`<details><summary>${esc(p.nome)}<span></span></summary><table><thead><tr><th>Tamanho</th><th class="num">Preço</th><th class="num">Em estoque</th><th>Novo total</th><th></th></tr></thead><tbody>
+ ${p.variacoes.map(v=>`<tr><td><b>${esc(v.tamanho)}</b></td><td class="num">${R(v.preco_centavos)}</td><td class="num ${v.estoque<=v.estoque_minimo?'baixo':''}">${v.estoque}${v.estoque<=v.estoque_minimo?' ⚠ baixo':''}</td>
+ <td><input id="e${v.id}" type="number" min="0" value="${v.estoque}"></td><td><button class="b peq" onclick="salvaEst(${v.id})">Salvar</button></td></tr>`).join('')}</tbody></table></details>`).join('')}
+const salvaEst=tenta(async id=>{await api('/api/estoque','POST',{variacao_id:id,quantidade:$('#e'+id).value,motivo:'entrada/ajuste manual'});aviso('Estoque atualizado.');S.cat=await api('/api/catalogo');vEstoque();document.querySelector(`#e${id}`)?.closest('details')?.setAttribute('open','')});
+
+const vHist=tenta(async()=>{const f=new URLSearchParams();for(const k of['aluno','turma','de','ate']){const e=$('#f'+k);if(e&&e.value)f.set(k,e.value)}
+ S.vendas=await api('/api/vendas?'+f);const ativas=S.vendas.filter(v=>v.status==='ativa'),tot=ativas.reduce((s,v)=>s+v.total_centavos,0);
+ const keep={};for(const k of['aluno','turma','de','ate'])keep[k]=$('#f'+k)?.value||'';
+ $('#v').innerHTML=`<div class="card"><div class="grade"><label>Aluno<input id="faluno" value="${esc(keep.aluno)}" oninput="vHist()"></label><label>Turma<select id="fturma" onchange="vHist()"><option value="">Todas</option>${opts(TURMAS,keep.turma)}</select></label>
+ <label>De<input id="fde" type="date" value="${keep.de}" onchange="vHist()"></label><label>Até<input id="fate" type="date" value="${keep.ate}" onchange="vHist()"></label></div>
+ <p style="margin-top:12px"><b>${ativas.length}</b> vendas · <b>${R(tot)}</b> arrecadados (canceladas não contam)</p></div>
+ <div class="card" style="overflow:auto">${S.vendas.length?`<table><thead><tr><th>Nº</th><th>Data</th><th>Aluno</th><th>Turma</th><th>Funcionário</th><th class="num">Total</th><th>Pagamento</th><th></th></tr></thead><tbody>
+ ${S.vendas.map(v=>`<tr class="${v.status==='cancelada'?'cancelada':''}"><td>${v.id}</td><td>${dt(v.data)}</td><td>${esc(v.aluno)}</td><td>${esc(v.turma)}</td><td>${esc(v.funcionario)}</td><td class="num">${R(v.total_centavos)}</td><td>${esc(v.pagamento)}</td>
+ <td><button class="b sec peq" onclick="recibo(S.vendas.find(x=>x.id===${v.id}))">Recibo</button> ${v.status==='ativa'?`<button class="b perigo peq" onclick="cancela(${v.id})">Cancelar</button>`:''}</td></tr>`).join('')}</tbody></table>`:'<div class="vazio">Nenhuma venda encontrada.</div>'}</div>`;
+ const el=$('#faluno');if(el&&keep.aluno){el.focus();el.setSelectionRange(99,99)}});
+const cancela=tenta(async id=>{if(!confirm('Cancelar a venda '+id+'? As peças voltam ao estoque.'))return;await api(`/api/vendas/${id}/cancelar`,'POST',{});aviso('Venda cancelada e estoque devolvido.');vHist()});
+
+/* ---------- CHAVES ---------- */
+const chaves=tenta(async()=>{const a=S.aba.c||'painel';$('#app').innerHTML=`<h2>Controle de chaves</h2>${abas('c',[['painel','Painel'],['hist','Histórico'],['cad','Cadastro']],a)}<div id="v"></div>`;
+ const v=$('#v'),ks=await api('/api/chaves');
+ if(a==='painel'){const ab=await api('/api/chaves/abertas');
+  v.innerHTML=`<div class="cols"><div class="card" style="overflow:auto"><h3>Chaves</h3>${ks.length?`<table><thead><tr><th>Nº</th><th>Descrição</th><th>Cópias</th><th>Situação</th><th>Quem pegou</th><th></th></tr></thead><tbody>
+  ${ks.map(k=>`<tr><td><b>${esc(k.numero)}</b></td><td>${esc(k.descricao)}</td><td>${k.copias}</td><td>${k.fora?`<span class="baixo">${k.fora} fora</span>`:'No chaveiro'}</td><td>${esc(k.com||'—')}</td>
+  <td><button class="b peq" ${k.fora>=k.copias?'disabled':''} onclick="retirar(${k.id})">Retirar</button></td></tr>`).join('')}</tbody></table>`:'<div class="vazio">Nenhuma chave cadastrada. Use a aba Cadastro.</div>'}</div>
+  <aside class="card"><h3>Para devolver</h3>${ab.length?ab.map(m=>`<div style="padding:8px 0;border-bottom:1px solid #e8ebf0"><b>Chave ${esc(m.numero)}</b> ${esc(m.descricao)}<br>${esc(m.pegou)} · saiu ${dt(m.saida)}<br><button class="b sec peq" style="margin-top:4px" onclick="devolver(${m.id})">Registrar devolução</button></div>`).join(''):'<div class="vazio">Todas as chaves estão no chaveiro.</div>'}</aside></div>
+  <div id="ret" class="card" style="display:none"></div>`}
+ if(a==='hist'){const h=await api('/api/chaves/historico');
+  v.innerHTML=`<div class="card" style="overflow:auto">${h.length?`<table><thead><tr><th>Chave</th><th>Quem pegou</th><th>Saída</th><th>Registrado por</th><th>Devolução</th><th>Recebido por</th></tr></thead><tbody>
+  ${h.map(m=>`<tr><td><b>${esc(m.numero)}</b> ${esc(m.descricao)}</td><td>${esc(m.pegou)}</td><td>${dt(m.saida)}</td><td>${esc(m.registrou)}</td><td>${m.retorno?dt(m.retorno):'<span class="baixo">fora</span>'}</td><td>${esc(m.recebeu||'—')}</td></tr>`).join('')}</tbody></table>`:'<div class="vazio">Sem movimentações ainda.</div>'}</div>`}
+ if(a==='cad')v.innerHTML=`<div class="card"><h3>Cadastrar chave</h3><div class="grade"><label>Número<input id="kn"></label><label>Descrição (sala, armário…)<input id="kd"></label><label>Quantidade de cópias<input id="kc" type="number" min="1" value="1"></label></div>
+  <button class="b" style="margin-top:14px" onclick="novaChave()">Salvar chave</button></div>`});
+function retirar(id){const k=$('#ret');k.style.display='block';k.innerHTML=`<h3>Quem está pegando a chave?</h3><div class="grade"><label>Funcionário que pegou<select id="rp"><option value="">Selecione</option>${opts(S.func)}</select></label></div>
+ <p style="margin:10px 0;color:var(--mudo)">Registrado por: <b>${esc(S.func.find(f=>String(f.id)===S.me)?.nome||'— escolha no topo —')}</b></p><button class="b" onclick="confRet(${id})">Confirmar retirada</button> <button class="b sec" onclick="$('#ret').style.display='none'">Cancelar</button>`;k.scrollIntoView({behavior:'smooth'})}
+const confRet=tenta(async id=>{exigeMe();const p=$('#rp').value;if(!p)throw new Error('Escolha quem pegou a chave.');await api('/api/chaves/retirar','POST',{chave_id:id,funcionario_id:+p,registrado_por_id:+S.me});aviso('Retirada registrada.');chaves()});
+const devolver=tenta(async id=>{exigeMe();await api('/api/chaves/devolver','POST',{mov_id:id,recebido_por_id:+S.me});aviso('Devolução registrada.');chaves()});
+const novaChave=tenta(async()=>{if(!$('#kn').value.trim())throw new Error('Informe o número da chave.');await api('/api/chaves','POST',{numero:$('#kn').value,descricao:$('#kd').value,copias:$('#kc').value});aviso('Chave cadastrada.');S.aba.c='painel';chaves()});
+
+addEventListener('hashchange',rota);carregarFunc().then(rota);
+</script>
+</body>
+</html>

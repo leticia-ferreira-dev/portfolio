@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #111111;
+    color: #dddddd;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #999999;
+    margin-bottom: 20px;
+}
+
+.busca-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto 20px auto;
+    padding: 0 10px;
+}
+
+#input-busca {
+    flex: 1;
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+    color: #dddddd;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#btn-carregar {
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #444444;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#btn-carregar:hover {
+    background-color: #444444;
+}
+
+.grid-jogos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-jogo {
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.card-jogo img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 12px;
+}
+
+.card-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.card-info p {
+    font-size: 0.9rem;
+    color: #999999;
+}
+
+@media (max-width: 480px) {
+    .busca-container {
+        flex-direction: column;
+    }
+}
